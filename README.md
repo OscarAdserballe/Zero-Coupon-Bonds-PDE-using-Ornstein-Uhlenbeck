@@ -8,16 +8,9 @@ This project aims to model and analyze the pricing of zero-coupon bonds using an
 
 ### Ornstein-Uhlenbeck Process
 
-The short rate, \( y_t \), is modeled using the Ornstein-Uhlenbeck process:
+The short rate, y_t, is modeled using the Ornstein-Uhlenbeck process:
 
-\[\
-dy_t = \\alpha (\\bar y - y_t)dt + \\sigma dB
-\]
-
-- \\( \\alpha \\): Speed of mean reversion
-- \\( \\bar y \\): Long-term mean
-- \\( \\sigma \\): Volatility
-- \\( dB \\): Brownian motion
+![] ("\images\orn.png")
 
 ### Zero-Coupon Bond Pricing
 
