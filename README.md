@@ -48,6 +48,12 @@ Solving these ODEs and imposing boundary conditions leads to the closed-form sol
 
 The boundary condition applied is V=1, t=T, which makes the model specifically suited for zero-coupon bonds.
 
+### Results
+
+Testing on 10-year Bond prices inferred from 10 yr yields over time, we end up with a result that's surprisingly close to the actual data, when we apply a scaling factor to adjust it to the data, considering the simplicity of the model.
+
+<img src="\images\output.png">
+
 ## Technologies and Dependencies
 
 - Python for numerical simulations and data analysis
