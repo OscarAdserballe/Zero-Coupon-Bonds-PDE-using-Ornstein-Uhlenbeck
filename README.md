@@ -10,7 +10,7 @@ This project aims to model and analyze the pricing of zero-coupon bonds using an
 
 The short rate, y_t, is modeled using the Ornstein-Uhlenbeck process:
 
-![] (images\orn.png)
+<img src="\images\orn.png">
 
 ### Zero-Coupon Bond Pricing
 
