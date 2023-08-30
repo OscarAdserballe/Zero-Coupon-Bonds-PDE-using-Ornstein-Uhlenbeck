@@ -14,46 +14,39 @@ The short rate, y_t, is modeled using the Ornstein-Uhlenbeck process:
 
 ### Zero-Coupon Bond Pricing
 
-The bond price \( V \) is modeled as a function of time \( t \), yield \( y \), and other parameters:
+The bond price V is modeled as a function of time t, maturity T and yield y:
 
-\[\
-V(t, y) = e^{(f(t)-yg(t))}
-\]
+V = V(t, T, y_t)
 
-This is derived from a PDE resembling the Black-Scholes equation, with boundary conditions applied.
+This is derived from a PDE resembling the Black-Scholes equation.
 
 ## Mathematics and Derivation
 
 ### Derivation of the PDE
 
-The PDE for bond pricing is derived using a Black-Scholes-esque argument involving dynamic hedging. A portfolio \( \\pi \) is set up consisting of two bonds \( V_1 \) and \( V_2 \) such that:
+The PDE for bond pricing is derived using a Black-Scholes-esque argument involving dynamic hedging. A portfolio pi is set up consisting of two bonds V_1 and V_2 to eliminate all risk so we can use the risk-free rate, s.t.:
 
-\[\
-\\pi = q_1 V_1 + q_2 V_2, \\frac{q_1}{q_2} = -\\frac{\\partial V_2/\\partial y}{\\partial V_1/\\partial y}
-\]
+<img src="\images\dynamic.png">
 
 Using Ito's lemma and reordering terms, the PDE becomes:
 
-\[\
-\\frac{\\partial V}{\\partial t} + \\frac{\\sigma ^ 2}{2}\\frac{\\partial^2V}{\\partial y^2} - yV + \\alpha(\\bar y - y)\\frac{\\partial V}{\\partial y} = 0
-\]
+<img src="\images\pde.png">
 
 ### Closed-Form Solution
 
-The closed-form solution is obtained by making an ansatz \( V(t, y) = e^{(f(t)-yg(t))} \) and substituting into the PDE. This reduces the PDE to a system of two ordinary differential equations (ODEs):
+The closed-form solution is obtained by using the following ansatz,
 
-\[\
-\\frac{df}{dt} = g \\alpha  \\bar y - \\frac{\\sigma^2g^2}{2}
-\]
-\[\
-\\frac{dg}{dt} = -1 + g\\alpha
-\]
+<img src="\images\ansatz.png">
 
-Solving these ODEs and imposing boundary conditions leads to the closed-form solution for \( V(t, y) \).
+and substituting into the PDE. This reduces the PDE to a system of two ordinary differential equations (ODEs):
+
+<img src="\images\system.png">
+
+Solving these ODEs and imposing boundary conditions leads to the closed-form solution for V(t, y).
 
 ### Boundary Conditions
 
-The boundary condition applied is \( V = 1, t = T \), which makes the model specifically suited for zero-coupon bonds.
+The boundary condition applied is V=1, t=T, which makes the model specifically suited for zero-coupon bonds.
 
 ## Technologies and Dependencies
 
